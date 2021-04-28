@@ -1,0 +1,10 @@
+@import './reset';
+@import './variables';
+
+body {
+  font-family: $font-family-monospace;
+}
+
+h1, h2, h3, h4 { 
+  font-family: $font-family-sans-serif;
+}
