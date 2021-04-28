@@ -3,8 +3,39 @@
 
 body {
   font-family: $font-family-monospace;
+  font-size: $font-size-base;
+  background-color: $background;
+  padding: 0 5rem;
 }
 
 h1, h2, h3, h4 { 
   font-family: $font-family-sans-serif;
+}
+
+// header 
+header {
+  display: flex; 
+  justify-content: flex-end;
+  gap: 4rem;
+  color: $heading;
+  padding: 5rem 0;
+  text-align: right;
+  transition: 0.5 all ease-in-out;
+  > a:hover {
+    color: $primary;
+    transform: scale(1.1);
+  }
+}
+
+// hero 
+.section__hero {
+  font-style: italic;
+  h1 {
+    font-size: 4.8rem;
+    font-weight: bold;
+    color: $heading; 
+  }
+  p {
+    color: $paragraph;
+  }
 }
