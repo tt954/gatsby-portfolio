@@ -1,8 +1,10 @@
 import React from "react"
-import Header from "../components/header"
-import Project from "../components/project"
+import Header from "../components/Header"
+import Project from "../components/Project"
+import Hero from '../components/Hero'
 
 import { projectData } from '../media/data'
+import "tailwindcss/dist/base.min.css"
 import "../styles/index.scss"
 
 export default function Home() {
@@ -20,20 +22,14 @@ export default function Home() {
 
   return (
     <div>
-      <Header />
-      <div className="section__hero">
-        <h1>
-          Hello World{" "}
-          <span role="img" aria-label="world" style={{ fontStyle: "normal" }}>
-            🌎
-          </span>
-        </h1>
-        <p>My name is Tieulam.</p>
+      <div className="main__sidebar max-w-sm flex flex-col mt-40">
+        <Hero />
+        <Header />
       </div>
 
-      <div className="section__projects">
+      {/* <div className="section__projects">
         {projects}
-      </div>
+      </div> */}
     </div>
   )
 }
