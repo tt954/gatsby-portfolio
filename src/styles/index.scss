@@ -1,17 +1,56 @@
-@import './reset';
-@import './variables';
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "./reset";
+@import "./variables";
 
 body {
   font-family: $font-family-monospace;
+  font-size: 1.6rem;
   background-color: $background;
 }
 
-@layer base {
-  .col-centered {
-    @apply flex flex-col items-center justify-center;
+@mixin centered() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__sidebar {
+  @include centered();
+  flex-direction: column;
+  max-width: 33.33%;
+  padding: 7rem;
+  border-right: 1px solid $secondary;
+}
+
+.section__info {
+  @include centered();
+  flex-direction: column;
+  color: $heading;
+  img {
+    border-radius: 50%;
+    width: 10rem; height: auto;
+  }
+  p:nth-child(1) {
+    font-family: $font-family-sans-serif;
+    font-style: italic;
+    font-weight: lighter;
+  }
+}
+
+.section__socials {
+  @include centered();
+  gap: 2.4rem;
+  font-size: 2.4rem;
+  margin-top: 4rem;
+}
+
+.section__nav {
+  @include centered();
+  flex-direction: column;
+  gap: 3.2rem;
+  margin-top: 4rem;
+  a { transition: all 0.2s ease-in-out; }
+  :hover {
+    color: $primary;
+    transform: scale(1.1);
   }
 }

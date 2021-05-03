@@ -1,10 +1,10 @@
 import React from "react"
-import Header from "../components/Header"
+import Info from '../components/Info'
+import Socials from '../components/Socials'
+import Navbar from "../components/Navbar"
 import Project from "../components/Project"
-import Hero from '../components/Hero'
 
 import { projectData } from '../media/data'
-import "tailwindcss/dist/base.min.css"
 import "../styles/index.scss"
 
 export default function Home() {
@@ -22,9 +22,10 @@ export default function Home() {
 
   return (
     <div>
-      <div className="main__sidebar max-w-sm flex flex-col mt-40">
-        <Hero />
-        <Header />
+      <div className="main__sidebar">
+        <Info />
+        <Socials />
+        <Navbar />
       </div>
 
       {/* <div className="section__projects">
