@@ -7,15 +7,14 @@
 module.exports = {
   /* Your site config here */
   plugins: [
+    `gatsby-plugin-sass`,
     {
-      resolve: `gatsby-plugin-sass`,
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
-        postCssPlugins: [
-          require("tailwindcss"),
-          require("./tailwind.config.js"), // Optional: Load custom Tailwind CSS configuration
-        ],
+        google: {
+          families: ['Poppins'],
+        },
       },
     },
-    `gatsby-plugin-emotion`,
   ],
 }

@@ -1,0 +1,49 @@
+.main__sidebar {
+  @include centered();
+  flex-direction: column;
+  max-width: 33.33%;
+  padding: 7rem 5rem;
+  border-right: 1px solid $secondary;
+}
+
+.sidebar__info {
+  @include centered();
+  flex-direction: column;
+  color: $heading;
+  img {
+    border-radius: 50%;
+    width: 8rem; height: auto;
+    margin-bottom: 1rem;
+  }
+  p:nth-child(2) {
+    font-size: 2.4rem;
+    font-style: italic;
+  }
+  .sb-info__about {
+    margin-top: 2rem;
+  }
+}
+
+.sidebar__socials {
+  @include centered();
+  gap: 2.4rem;
+  font-size: 2.4rem;
+  cursor: pointer;
+  margin-top: 4rem;
+  transition: all 0.5 ease-in-out;
+  :hover {
+    color: $primary;
+  }
+}
+
+.sidebar__nav {
+  @include centered();
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 4rem;
+  a { transition: all 0.2s ease-in-out; }
+  :hover {
+    color: $primary;
+    transform: scale(1.1);
+  }
+}
