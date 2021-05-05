@@ -1,6 +1,7 @@
 import React from "react"
 
 import Sidebar from '../components/Sidebar'
+import Contact from '../components/contact/Contact';
 // import { projectData } from '../media/data'
 import '../styles/index.scss';
 
@@ -20,7 +21,7 @@ export default function Home() {
   return (
     <div className="App">
       <Sidebar />
-
+      <Contact />
     </div>
   )
 }

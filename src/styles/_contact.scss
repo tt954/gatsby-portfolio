@@ -1,0 +1,10 @@
+.main__contact {
+    border: 1px solid $primary;
+    margin: 5rem;
+    padding: 3rem 8rem;
+    .contactForm {
+        display: flex;
+        flex-direction: column;
+    }
+}
+

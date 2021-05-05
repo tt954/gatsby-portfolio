@@ -8,6 +8,7 @@ module.exports = {
   /* Your site config here */
   plugins: [
     `gatsby-plugin-sass`,
+    `gatsby-plugin-material-ui`,
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
