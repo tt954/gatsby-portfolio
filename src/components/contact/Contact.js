@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import * as emailjs from "emailjs-com"
+import { emailjsKEYS } from "../../media/keys"
 import { TextField, Button } from "@material-ui/core/"
 
 export default function Contact() {
@@ -15,20 +16,35 @@ export default function Contact() {
   const handleSubject = e => setSubject(e.target.value)
   const handleMessage = e => setMessage(e.target.value)
 
+  const resetForm = () => {
+    setFirstName('')
+    setLastName('')
+    setEmail('')
+    setSubject('')
+    setMessage('')
+  }
+
   const handleSubmit = e => {
     e.preventDefault()
     const messageParams = {
-      from_name: firstName + lastName,
-      from_email: email,
-      subject, 
-      message_html: message,
+      name: firstName + lastName,
+      email,
+      subject,
+      message,
     }
-    emailjs.send()
+    emailjs.send(
+      emailjsKEYS.serviceId,
+      emailjsKEYS.templateId,
+      messageParams,
+      emailjsKEYS.userId
+    )
+    resetForm()
+    console.log(messageParams)
   }
 
   return (
     <div className="main__contact">
-      <form className="contactForm">
+      <form className="contactForm" onSubmit={handleSubmit}>
         <TextField
           required
           id="standard-basic"
@@ -65,7 +81,9 @@ export default function Contact() {
           value={message}
           onChange={handleMessage}
         />
-        <Button color="secondary" type="submit">Submit</Button>
+        <Button color="secondary" type="submit">
+          Submit
+        </Button>
       </form>
     </div>
   )
