@@ -5,7 +5,7 @@ export const projectData = [
     description: "a Soundcloud clone.",
     ghlink: "#",
     livelink: "#",
-    imgSrc: "#"
+    imgSrc: "#",
   },
   {
     title: "match",
@@ -13,6 +13,11 @@ export const projectData = [
     description: "matching card game",
     ghlink: "#",
     livelink: "#",
-    imgSrc: "#"
+    imgSrc: "#",
   },
 ]
+
+export const emailjsKEYS = {
+  templateId: "template_dnzji4c",
+  serviceId: "service_66s30cf",
+}
