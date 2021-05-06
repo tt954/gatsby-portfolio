@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import * as emailjs from "emailjs-com"
-import { emailjsKEYS } from "../../media/keys"
+import { emailjsKEYS } from "../../media/data"
 import { TextField, Button } from "@material-ui/core/"
 
 export default function Contact() {
@@ -17,11 +17,11 @@ export default function Contact() {
   const handleMessage = e => setMessage(e.target.value)
 
   const resetForm = () => {
-    setFirstName('')
-    setLastName('')
-    setEmail('')
-    setSubject('')
-    setMessage('')
+    setFirstName("")
+    setLastName("")
+    setEmail("")
+    setSubject("")
+    setMessage("")
   }
 
   const handleSubmit = e => {
@@ -44,47 +44,51 @@ export default function Contact() {
 
   return (
     <div className="main__contact">
-      <form className="contactForm" onSubmit={handleSubmit}>
-        <TextField
-          required
-          id="standard-basic"
-          label="First Name"
-          value={firstName}
-          onChange={handleFNChange}
-        />
-        <TextField
-          id="standard-basic"
-          label="Last Name"
-          value={lastName}
-          onChange={handleLNChange}
-        />
-        <TextField
-          required
-          id="standard-basic"
-          label="Email"
-          value={email}
-          onChange={handleEmail}
-        />
-        <TextField
-          required
-          id="standard-basic"
-          label="Subject"
-          value={subject}
-          onChange={handleSubject}
-        />
-        <TextField
-          id="outlined-multiline-static"
-          label="Message"
-          multiline
-          rows={4}
-          variant="outlined"
-          value={message}
-          onChange={handleMessage}
-        />
-        <Button color="secondary" type="submit">
-          Submit
-        </Button>
-      </form>
+      <section className="contact__header">
+        <div>Say hi!</div>
+      </section>
+      <section className="contact__main">
+        <form className="contactForm" onSubmit={handleSubmit}>
+          <TextField
+            required
+            id="standard-basic"
+            label="First Name"
+            value={firstName}
+            onChange={e => setFirstName(e.target.value)}
+          />
+          <TextField
+            id="standard-basic"
+            label="Last Name"
+            value={lastName}
+            onChange={handleLNChange}
+          />
+          <TextField
+            required
+            id="standard-basic"
+            label="Email"
+            value={email}
+            onChange={handleEmail}
+          />
+          <TextField
+            id="standard-basic"
+            label="Subject"
+            value={subject}
+            onChange={handleSubject}
+          />
+          <TextField
+            id="outlined-multiline-static"
+            label="Message"
+            multiline
+            rows={4}
+            variant="outlined"
+            value={message}
+            onChange={handleMessage}
+          />
+          <Button color="secondary" type="submit">
+            Submit
+          </Button>
+        </form>
+      </section>
     </div>
   )
 }

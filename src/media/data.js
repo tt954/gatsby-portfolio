@@ -16,3 +16,9 @@ export const projectData = [
     imgSrc: "#",
   },
 ]
+
+export const emailjsKEYS = {
+  templateId: "template_dnzji4c",
+  serviceId: "service_66s30cf",
+  userId: "user_7Be7mWxG97iGYB9Dqa8aM",
+}
