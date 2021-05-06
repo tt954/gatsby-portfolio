@@ -1,9 +1,12 @@
 import React from "react"
 
-import Sidebar from '../components/Sidebar'
-import Contact from '../components/contact/Contact';
+import { ThemeProvider } from "@material-ui/styles"
+
+import Sidebar from "../components/Sidebar"
+import Contact from "../components/contact/Contact"
 // import { projectData } from '../media/data'
-import '../styles/index.scss';
+import theme from "../styles/theme"
+import "../styles/index.scss"
 
 export default function Home() {
   // const projects = projectData.map((project, idx) => (
@@ -19,12 +22,14 @@ export default function Home() {
   // ))
 
   return (
-    <div className="App">
-      <Sidebar />
-      
-      <main className="main">
-        <Contact />
-      </main>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <Sidebar />
+
+        <main className="main">
+          <Contact />
+        </main>
+      </div>
+    </ThemeProvider>
   )
 }

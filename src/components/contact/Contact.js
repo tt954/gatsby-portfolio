@@ -1,9 +1,25 @@
 import React, { useState } from "react"
 import * as emailjs from "emailjs-com"
 import { emailjsKEYS } from "../../media/data"
+
+import { makeStyles } from "@material-ui/core/styles"
 import { TextField, Button } from "@material-ui/core/"
 
+const useStyles = makeStyles({
+  group: {
+    display: "flex",
+    flexDirection: "row",
+    gap: "2rem",
+  },
+  submitBtn: {
+    margin: '2rem 0',
+    color: "white",
+  },
+})
+
 export default function Contact() {
+  const classes = useStyles()
+
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [subject, setSubject] = useState("")
@@ -45,20 +61,26 @@ export default function Contact() {
       </section>
       <section className="contact__main">
         <form className="contactForm" onSubmit={handleSubmit}>
-          <TextField
-            required
-            id="name"
-            label="Name"
-            value={name}
-            onChange={e => setName(e.target.value)}
-          />
-          <TextField
-            required
-            id="email"
-            label="Email"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-          />
+          <div className={classes.group}>
+            <TextField
+              required
+              id="name"
+              label="Name"
+              value={name}
+              onChange={e => setName(e.target.value)}
+              fullWidth
+              margin="dense"
+            />
+            <TextField
+              required
+              id="email"
+              label="Email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              fullWidth
+              margin="dense"
+            />
+          </div>
           <TextField
             id="subject"
             label="Subject"
@@ -69,12 +91,15 @@ export default function Contact() {
             id="message"
             label="Message"
             multiline
-            rows={4}
-            variant="outlined"
             value={message}
             onChange={e => setMessage(e.target.value)}
           />
-          <Button color="secondary" type="submit">
+          <Button
+            color="primary"
+            variant="contained"
+            type="submit"
+            className={classes.submitBtn}
+          >
             Send
           </Button>
         </form>
