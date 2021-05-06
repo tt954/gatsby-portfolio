@@ -21,7 +21,10 @@ export default function Home() {
   return (
     <div className="App">
       <Sidebar />
-      <Contact />
+      
+      <main className="main">
+        <Contact />
+      </main>
     </div>
   )
 }
