@@ -28,7 +28,7 @@ const Project = ({ project }) => {
 
   return (
     <Card className={classes.card}>
-      <CardActionArea>
+      <CardActionArea href={livelink} target="_blank">
         <CardMedia
           className={classes.media}
           component="img"
@@ -37,7 +37,7 @@ const Project = ({ project }) => {
           title={title}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography variant="h4" component="h2">
             {title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">

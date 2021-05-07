@@ -11,18 +11,19 @@ import theme from "../styles/theme"
 import "../styles/index.scss"
 
 const make = makeStyles({
-    header: {
-        fontSize: '3.2rem',
-        borderBottom: '1px solid',
-        borderColor: theme.palette.primary,
-        marginBottom: '2rem'
-    }
+  root: {},
+  header: {
+    fontSize: "2.4rem",
+    borderBottom: "1px solid",
+    borderColor: theme.palette.primary,
+    marginBottom: "2rem",
+  },
 })
 
 export default function portfolio() {
   const classes = make()
   const projects = projectData.map((project, idx) => (
-    <Grid xs={3} key={idx} item>
+    <Grid xs={4} key={idx} item>
       <Project key={idx} project={project} />
     </Grid>
   ))
