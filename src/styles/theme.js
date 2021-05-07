@@ -12,6 +12,10 @@ const theme = createMuiTheme({
       main: "#c3f0ca",
     },
   },
+  mediaQueryThreshold: {
+    M: 600,
+    L: 1024,
+  },
 })
 
-export default theme;
+export default theme

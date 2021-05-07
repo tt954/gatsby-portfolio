@@ -1,23 +1,39 @@
 import React from "react"
 
-import { Card, CardActionArea, CardActions, CardMedia, CardContent, Typography, Button } from "@material-ui/core"
+import { makeStyles } from "@material-ui/core/styles"
+import {
+  Card,
+  CardActionArea,
+  CardActions,
+  CardMedia,
+  CardContent,
+  Typography,
+  Button,
+  Chip,
+} from "@material-ui/core"
 
-const Project = ({
-  title,
-  ghlink,
-  livelink,
-  description,
-  technologies,
-  imgSrc,
-}) => {
+const useStyles = makeStyles({
+  card: {
+    backgroundColor: "transparent",
+    borderRadius: 0,
+    borderBottom: '1px solid black',
+    boxShadow: "none",
+  },
+  media: {},
+})
+
+const Project = ({ project }) => {
+  const { title, ghlink, livelink, description, technologies, imgSrc } = project
+  const classes = useStyles()
+
   return (
-    <Card>
+    <Card className={classes.card}>
       <CardActionArea>
         <CardMedia
+          className={classes.media}
           component="img"
           alt={title}
-          height="140"
-          image="https://images.unsplash.com/photo-1619983081593-e2ba5b543168?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+          image={imgSrc}
           title={title}
         />
         <CardContent>
@@ -30,8 +46,12 @@ const Project = ({
         </CardContent>
       </CardActionArea>
       <CardActions>
-          <Button href={ghlink} size="small" color="primary">Github</Button>
-          <Button href={livelink} size="small" color="primary">Live</Button>
+        <Button href={ghlink} size="small" color="primary">
+          Github
+        </Button>
+        <Button href={livelink} size="small" color="primary">
+          Live
+        </Button>
       </CardActions>
     </Card>
   )
