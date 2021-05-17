@@ -1,6 +1,10 @@
 import { extendTheme } from "@chakra-ui/react"
 
 const theme = {
+  fonts: {
+    heading: "Roboto",
+    body: "Inconsolata, monospace",
+  },
   colors: {
     black: "#000",
     white: "#fff",

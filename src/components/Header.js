@@ -1,5 +1,6 @@
 import React from 'react'
 import {
+  Stack,
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
@@ -7,10 +8,11 @@ import {
 
 export default function Header() {
     return (
-      <div>
+      <Stack direction="row" justifyContent="space-between" position='fixed'>
+        <p>Home</p>
         <Breadcrumb>
           <BreadcrumbItem>
-            <BreadcrumbLink href="#">Portfolio</BreadcrumbLink>
+            <BreadcrumbLink href="#portfolio">Portfolio</BreadcrumbLink>
           </BreadcrumbItem>
 
           <BreadcrumbItem>
@@ -21,6 +23,6 @@ export default function Header() {
             <BreadcrumbLink href="#">Contact</BreadcrumbLink>
           </BreadcrumbItem>
         </Breadcrumb>
-      </div>
+      </Stack>
     )
 }
