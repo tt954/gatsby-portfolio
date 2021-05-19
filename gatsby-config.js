@@ -7,6 +7,10 @@
 module.exports = {
   /* Your site config here */
   plugins: [
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-smoothscroll`,
     {
       resolve: "@chakra-ui/gatsby-plugin",
       options: {

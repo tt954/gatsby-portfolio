@@ -1,0 +1,42 @@
+:root { --time: 0.707s; }
+
+.container {
+  padding: 0 5rem 5rem;
+}
+
+// ================================================================= //
+// PROJECT CARDS FLIPPING
+
+.card {
+  perspective: 40rem;
+  transition: z-index, transform calc(var(--time) / 4);
+  transition-delay: var(--time), 0s;
+  cursor: pointer;
+  z-index: 0;
+  
+  &.flipped {
+    transition-delay: 0s;
+    z-index: 1;
+  }
+
+  &.flipped {
+    transform: scale(0.975);
+  }
+}
+
+.card-body {
+  transform-style: preserve-3d;
+  transition: var(--time) transform;
+
+  .flipped & {
+    transform: rotateY(180deg);
+  }
+}
+
+.card-front, .card-back {
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg) translate(100%, 0);
+}

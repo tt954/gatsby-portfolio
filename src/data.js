@@ -50,3 +50,9 @@ projectData.forEach(project => {
   allTechs = [...allTechs, ...project.technologies]
 })
 export const techs = [...new Set(allTechs)]
+
+export const emailjsKEYS = {
+  templateId: "template_dnzji4c",
+  serviceId: "service_66s30cf",
+  userId: "user_7Be7mWxG97iGYB9Dqa8aM",
+}

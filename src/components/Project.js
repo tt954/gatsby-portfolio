@@ -1,19 +1,46 @@
-import React from 'react'
-import { Box, Image } from "@chakra-ui/react"
+import React from "react"
+import {
+  Flex,
+  Spacer,
+  Box,
+  Text,
+  Image,
+  Button,
+  Collapse,
+} from "@chakra-ui/react"
+import { useDisclosure } from "@chakra-ui/react"
+import { FaAngleDown } from "react-icons/fa"
 
-export default function Project({project}) {
-    return (
-      <Box maxW="md" borderWidth="1px" borderRadius="lg" overflow="hidden">
-        <Image src={project.imgSrc} alt={project.title} />
+export default function Project({ project }) {
+  const { isOpen, onToggle } = useDisclosure()
 
-        <Box>
-          <Box mt="1" fontWeight="semibold" as="h4" lineHeight="tight">
-            {project.title}
-          </Box>
-          <Box as="p" color="dark" fontSize="sm" isTruncated>
-            {project.description}
-          </Box>
-        </Box>
-      </Box>
-    )
+  const projectDetails = (
+    <Box>
+      <p>{project.title}</p>
+      <p>{project.technologies}</p>
+      <p>{project.description}</p>
+    </Box>
+  )
+
+  return (
+    <Box direction="column">
+      <Image src={project.imgSrc} alt={project.title} h="100%" />
+    </Box>
+  )
+}
+
+{
+  /* <div className="card-body">
+  <Box className="card-front" bg="light">
+    <img src={project.imgSrc} alt={project.title} />
+    <Box mt="1" fontWeight="semibold" as="h4" lineHeight="tight">
+      {project.title}
+    </Box>
+  </Box>
+  <Box className="card-back">
+    <p>{project.title}</p>
+    <p>{project.technologies}</p>
+    <p>{project.description}</p>
+  </Box>
+</div> */
 }
