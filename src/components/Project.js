@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import {
   Flex,
   Spacer,
@@ -8,24 +8,32 @@ import {
   Button,
   Collapse,
 } from "@chakra-ui/react"
-import { useDisclosure } from "@chakra-ui/react"
+import Zoom from "react-reveal/Zoom"
 import { FaAngleDown } from "react-icons/fa"
 
 export default function Project({ project }) {
-  const { isOpen, onToggle } = useDisclosure()
+  const { show, setShow } = useState()
 
   const projectDetails = (
-    <Box>
+    <Box className="p-details">
       <p>{project.title}</p>
-      <p>{project.technologies}</p>
-      <p>{project.description}</p>
     </Box>
   )
 
   return (
-      <Box direction="column">
-        <Image src={project.imgSrc} alt={project.title} transition="all 0.5s ease-in-out"/>
-      </Box>
+    <Box
+      className="p-card"
+      direction="column"
+      cursor="pointer"
+      position="relative"
+    >
+      <Image
+        className="p-face"
+        src={project.imgSrc}
+        alt={project.title}
+      />
+      {projectDetails}
+    </Box>
   )
 }
 

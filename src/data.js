@@ -8,15 +8,15 @@ export const projectData = [
   //   imgSrc:
   //     "https://images.unsplash.com/photo-1619983081593-e2ba5b543168?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
   // },
-  // {
-  //   title: "openFridge",
-  //   technologies: ["mongodb", "express", "react", "node"],
-  //   description: "Recipe generator",
-  //   ghlink: "https://github.com/gorterd/open-fridge",
-  //   livelink: "https://open--fridge.herokuapp.com/",
-  //   imgSrc:
-  //     "https://i.pinimg.com/originals/78/12/da/7812da761cbf109ca333fe3f516a0d5b.jpg",
-  // },
+  {
+    title: "openFridge",
+    technologies: ["mongodb", "express", "react", "node"],
+    description: "Recipe generator",
+    ghlink: "https://github.com/gorterd/open-fridge",
+    livelink: "https://open--fridge.herokuapp.com/",
+    imgSrc:
+      "https://i.pinimg.com/originals/78/12/da/7812da761cbf109ca333fe3f516a0d5b.jpg",
+  },
   {
     title: "Trivial Trivia",
     technologies: ["react"],

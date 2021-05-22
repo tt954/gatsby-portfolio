@@ -68,7 +68,7 @@ export default function Home() {
         {/* <Stack direction="row" spacing={4} align="center">
           {techFilterBtns}
         </Stack> */}
-        <SimpleGrid columns={[1, null, 2]} spacing={4} py={2}>
+        <SimpleGrid columns={[1, null, 2]} py={2}>
           {projects}
         </SimpleGrid>
       </main>
@@ -83,7 +83,9 @@ export default function Home() {
         <Heading as="h2" size="lg" color="dark" letterSpacing={1.5}>
           Say hello.
         </Heading>
-        <ContactForm />
+        <div className="contactWrapper">
+          <ContactForm />
+        </div>
       </main>
 
       <Footer />
