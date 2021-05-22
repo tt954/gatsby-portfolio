@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Flex, Spacer, Button } from "@chakra-ui/react"
-import { FaArrowUp } from "react-icons/fa"
+import { FaArrowUp, FaGithub } from "react-icons/fa"
+import { GrMailOption } from "react-icons/gr"
 
 export default function Footer() {
   const scrollTop = () => {
@@ -18,6 +19,7 @@ export default function Footer() {
       align="center"
     >
       <p>© 2021 | Designed and developed by TT.</p>
+
       <Spacer />
       <Button
         onClick={scrollTop}

@@ -1,6 +1,8 @@
 import React from "react"
 import scrollTo from "gatsby-plugin-smoothscroll"
 import {
+  Flex,
+  Text,
   Stack,
   Breadcrumb,
   BreadcrumbItem,
@@ -12,26 +14,37 @@ export default function Header() {
     <Stack
       className="container"
       direction="row"
-      justifyContent="space-between"
-      position="fixed"
-      bg="light"
+      justify="space-between"
+      align="center"
+      bg="transparent"
       fontSize="lg"
       fontWeight="bold"
       w="100%"
       pt="4rem"
     >
-      <p>T.Tiffany</p>
-      <Breadcrumb>
+      <Flex direction="column" lineHeight="1.35rem">
+        <Text fontSize="2xl">tiffanythai.</Text>
+        <Text fontSize="lg" color="gray.300">
+          Front End Developer
+        </Text>
+      </Flex>
+      <Breadcrumb color="gray.500">
         <BreadcrumbItem>
-          <BreadcrumbLink onClick={() => scrollTo('#portfolio')}>Portfolio</BreadcrumbLink>
+          <BreadcrumbLink onClick={() => scrollTo("#portfolio")}>
+            Portfolio
+          </BreadcrumbLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem>
-          <BreadcrumbLink onClick={() => scrollTo('#about')}>About</BreadcrumbLink>
+          <BreadcrumbLink onClick={() => scrollTo("#about")}>
+            About
+          </BreadcrumbLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem>
-          <BreadcrumbLink onClick={() => scrollTo('#contact')}>Contact</BreadcrumbLink>
+          <BreadcrumbLink onClick={() => scrollTo("#contact")}>
+            Contact
+          </BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
     </Stack>

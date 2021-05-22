@@ -23,9 +23,9 @@ export default function Project({ project }) {
   )
 
   return (
-    <Box direction="column">
-      <Image src={project.imgSrc} alt={project.title} h="100%" />
-    </Box>
+      <Box direction="column">
+        <Image src={project.imgSrc} alt={project.title} transition="all 0.5s ease-in-out"/>
+      </Box>
   )
 }
 

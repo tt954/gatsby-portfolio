@@ -1,11 +1,23 @@
 import React from "react"
-import { ChakraProvider, Heading, Text, SimpleGrid, Center, Container, Stack, Button } from "@chakra-ui/react"
+import {
+  ChakraProvider,
+  Heading,
+  Text,
+  SimpleGrid,
+  Flex,
+  Container,
+  Stack,
+  Button,
+} from "@chakra-ui/react"
+import Fade from "react-reveal/Fade"
+
 import Header from "../components/Header"
 import Project from "../components/Project"
 import ContactForm from "../components/ContactForm"
 import Footer from "../components/Footer"
 import theme from "../styles/theme"
-import '../styles/index.scss'
+import Landing from "../images/landing.jpg"
+import "../styles/index.scss"
 import { projectData, techs } from "../data"
 
 export default function Home() {
@@ -14,34 +26,39 @@ export default function Home() {
   ))
 
   const techFilterBtns = techs.map(tech => (
-    <Button variant="outlined" bg="indigo" color="light" size="xs" borderRadius="lg">
+    <Button
+      variant="outlined"
+      bg="indigo"
+      color="light"
+      size="xs"
+      borderRadius="lg"
+    >
       {tech}
     </Button>
   ))
 
   return (
     <ChakraProvider theme={theme}>
-      <Header />
+      <section id="landing">
+        <Header />
 
-      <Center
-        backgroundImage="url('/images/hero.png')"
-        backgroundPosition="center"
-        backgroundRepeat="no-repeat"
-        h="100vh"
-        px="10rem"
-        flexDirection="column"
-        alignItems="flex-start"
-      >
-        <Heading as="h1" size="3xl" color="dark">
-          Development. Design. User Interface.
-        </Heading>
-        <Text color="indigo" fontSize="2xl" fontWeight="bold">
-          tiffany
-        </Text>
-        <Text fontSize="lg">
-          Frontend developer. Fashion enthusiast and plant lover.
-        </Text>
-      </Center>
+        <Flex
+          p="6rem 5rem 5rem"
+          flexDirection="column"
+          align="flex-start"
+          justify="center"
+        >
+          <Fade top>
+            <Heading as="h1" size="3xl" color="dark">
+              User <span>Friendly</span> Interface
+              <Text>Design and Development.</Text>
+            </Heading>
+            <Text size="lg" mt="0.5rem">
+              Frontend developer. Fashion enthusiast and plant lover.
+            </Text>
+          </Fade>
+        </Flex>
+      </section>
 
       <main id="portfolio" className="container">
         <Heading as="h2" size="lg" color="dark" letterSpacing={1.5}>
@@ -51,7 +68,7 @@ export default function Home() {
         {/* <Stack direction="row" spacing={4} align="center">
           {techFilterBtns}
         </Stack> */}
-        <SimpleGrid columns={[1, 2, 3]} spacing={4} py={2}>
+        <SimpleGrid columns={[1, null, 2]} spacing={4} py={2}>
           {projects}
         </SimpleGrid>
       </main>
