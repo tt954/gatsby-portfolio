@@ -34,6 +34,9 @@ export default function Project({ project }) {
       direction="column"
       cursor="pointer"
       position="relative"
+      as="a"
+      href={project.livelink}
+      target="_blank"
     >
       <Image className="p-face" src={project.imgSrc} alt={project.title} />
       {projectDetails}
