@@ -6,7 +6,7 @@ import {
   SimpleGrid,
   Flex,
   Box,
-  Square,
+  Avatar,
   Button,
 } from "@chakra-ui/react"
 import Fade from "react-reveal/Fade"
@@ -19,7 +19,7 @@ import Footer from "../components/Footer"
 import theme from "../styles/theme"
 
 import photo from "../images/landing.jpg"
-import art from "../images/ttart.jpg"
+import avatar from "../images/avatar.jpg"
 
 import "../styles/index.scss"
 import { projectData, techs } from "../data"
@@ -73,8 +73,9 @@ export default function Home() {
       <main id="about">
         <section className="container">
           <Heading as="h2" size="lg" color="dark" letterSpacing={1.5}>
-            A little about me
+            Hi, hello, and welcome.
           </Heading>
+          <Avatar size="2xl" name="Tiffany Thai" src={avatar}/>
         </section>
 
         <Flex className="howiwork" p={["2rem 3rem", "4rem 5rem", "8rem 10rem"]}>
