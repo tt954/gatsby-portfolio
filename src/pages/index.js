@@ -77,7 +77,7 @@ export default function Home() {
           </Heading>
         </section>
 
-        <Flex className="howiwork" p="8rem 10rem">
+        <Flex className="howiwork" p={["2rem 3rem", "4rem 5rem", "8rem 10rem"]}>
           <Heading
             className="hiwHeading"
             fontFamily="body"
@@ -86,12 +86,12 @@ export default function Home() {
           >
             how i work
           </Heading>
-          <SimpleGrid className="points" columns={[1, null, 2]} color="white">
+          <SimpleGrid className="points" columns={[1, 1, 1, 2]} color="white">
             <Box p="3rem">
               <Heading>Planning</Heading>
               <Text>
-                Effective communication generates successful collaborations. Asking
-                the right questions. Goals are clear and precise.
+                Effective communication generates successful collaborations.
+                Asking the right questions. Goals are clear and precise.
               </Text>
             </Box>
             <Box p="3rem">
