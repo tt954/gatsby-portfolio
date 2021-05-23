@@ -18,10 +18,8 @@ import ContactForm from "../components/ContactForm"
 import Footer from "../components/Footer"
 import theme from "../styles/theme"
 
-
 import photo from "../images/landing.jpg"
-import art from '../images/ttart.jpg'
-
+import art from "../images/ttart.jpg"
 
 import "../styles/index.scss"
 import { projectData, techs } from "../data"
@@ -79,27 +77,49 @@ export default function Home() {
           </Heading>
         </section>
 
-        <Box className="howiwork" p="5rem 10rem">
-          <Heading>How I work</Heading>
-          <SimpleGrid columns={[1, null, 2]} color="white">
-            <Box border="1px solid black">
+        <Flex className="howiwork" p="8rem 10rem">
+          <Heading
+            className="hiwHeading"
+            fontFamily="body"
+            color="light"
+            letterSpacing={10}
+          >
+            how i work
+          </Heading>
+          <SimpleGrid className="points" columns={[1, null, 2]} color="white">
+            <Box p="3rem">
               <Heading>Planning</Heading>
-              <Text>Ask the right questions. With a clear path in mind, </Text>
+              <Text>
+                Effective communication generates successful collaborations. Asking
+                the right questions. Goals are clear and precise.
+              </Text>
             </Box>
-            <Box border="1px solid black">
+            <Box p="3rem">
               <Heading>Design</Heading>
-              <Text>The big picture.</Text>
+              <Text>
+                The big picture. Using the latest patterns and technologies to
+                craft a solid foundation to produce a productive development
+                process.
+              </Text>
             </Box>
-            <Box border="1px solid black">
+            <Box p="3rem">
               <Heading>Development</Heading>
-              <Text>Readable and clean code. </Text>
+              <Text>
+                Readable and clean code. Bringing ideas and prototypes to life.
+                Creating meaningful and user-first products for the better of
+                society.
+              </Text>
             </Box>
-            <Box border="1px solid black">
+            <Box p="3rem">
               <Heading>Retrospective</Heading>
-              <Text>For a better tomorrow. Learn from today.</Text>
+              <Text>
+                Taking feedback into considerations to improve the process. A
+                new day mean a new chance to start a different and even better
+                story.
+              </Text>
             </Box>
           </SimpleGrid>
-        </Box>
+        </Flex>
       </main>
 
       <Flex id="contact" boxShadow="md" m="5rem">

@@ -8,7 +8,7 @@
 
 #landing {
   height: 75vh;
-  display: flex; 
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
@@ -16,10 +16,26 @@
 }
 
 .howiwork {
-  background-image: url('../images/ttart.jpg');
+  background-image: url("../images/ttart.jpg");
   background-size: cover;
+  .hiwHeading {
+    background: black;
+    padding: 2rem 1rem;
+    writing-mode: vertical-rl;
+  }
+  .points {
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    div {
+      background-color: rgba(0,0,0,0.3);
+      border-bottom: 1px solid white;
+      border-right: 1px solid white;
+    }
+    h2 {
+      margin-bottom: 1rem;
+    }
+  }
 }
-
 
 .p-card:hover {
   .p-face {
@@ -29,7 +45,7 @@
 
 .p-face {
   width: 100%;
-  height: 30rem;
+  height: 25rem;
 }
 
 .p-details {
@@ -37,18 +53,19 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); 
+  transform: translate(-50%, -50%);
 }
 
 #contact {
   img {
-    width: 30%; height:auto;
+    width: 30%;
+    height: auto;
   }
 }
 
-
 .contactForm {
-  input, textarea {
+  input,
+  textarea {
     margin-bottom: 1rem;
   }
   button:hover {

@@ -18,7 +18,10 @@ export default function Footer() {
       justify="center"
       align="center"
     >
-      <p>© 2021 | Designed and developed by TT.</p>
+      <Flex direction="column">
+        Socials. Email. Github. 
+        <p>© 2021 | Designed and developed by TT.</p>
+      </Flex>
 
       <Spacer />
       <Button
