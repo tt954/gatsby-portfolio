@@ -2,41 +2,31 @@ import React from "react"
 import scrollTo from "gatsby-plugin-smoothscroll"
 import {
   Flex,
+  Stack,
   Box,
   Text,
-  Stack,
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  Menu, 
-  MenuList, 
-  MenuButton, 
+  Menu,
+  MenuList,
+  MenuButton,
   MenuItem,
-  IconButton
+  Link,
+  IconButton,
 } from "@chakra-ui/react"
-import { GiHamburgerMenu } from 'react-icons/gi'
+import { GiHamburgerMenu } from "react-icons/gi"
 
 export default function Header() {
   const navMenu = (
-    <Breadcrumb color="gray.500">
-      <BreadcrumbItem>
-        <BreadcrumbLink onClick={() => scrollTo("#portfolio")}>
-          Portfolio
-        </BreadcrumbLink>
-      </BreadcrumbItem>
-
-      <BreadcrumbItem>
-        <BreadcrumbLink onClick={() => scrollTo("#about")}>
-          About
-        </BreadcrumbLink>
-      </BreadcrumbItem>
-
-      <BreadcrumbItem>
-        <BreadcrumbLink onClick={() => scrollTo("#contact")}>
-          Contact
-        </BreadcrumbLink>
-      </BreadcrumbItem>
-    </Breadcrumb>
+    <Stack
+      color="gray.500"
+      fontFamily="heading"
+      fontWeight="normal"
+      direction="row"
+      spacing={10}
+    >
+      <Link onClick={() => scrollTo("#portfolio")}>Projects</Link>
+      <Link onClick={() => scrollTo("#about")}>About</Link>
+      <Link onClick={() => scrollTo("#contact")}>Contact</Link>
+    </Stack>
   )
 
   const mobileNav = (
@@ -57,31 +47,32 @@ export default function Header() {
   )
 
   return (
-    <Stack
-      className="container"
+    <Flex
       direction="row"
       justify="space-between"
       align="center"
-      bg="transparent"
+      borderBottom="1px solid black"
+      bgColor="light"
+      position="fixed"
       fontSize="lg"
       fontWeight="bold"
       w="100%"
-      pt="4rem"
+      p="1.5rem 4rem"
+      zIndex="999"
     >
-      <Flex direction="column" lineHeight="1.35rem">
-        <Box display={{ base: "none", md: "block" }}>
-          <Text fontSize="2xl">tiffanythai.</Text>
-          <Text fontSize="lg" color="gray.300">
-            Front End Developer
-          </Text>
+      <Box>
+        <Box display={{ base: "none", md: "block" }} lineHeight="1.35rem">
+          <Text fontSize="3xl">tiffanythai.</Text>
         </Box>
         <Box display={{ base: "block", md: "none" }}>
-          <Text fontSize="2xl">tt.</Text>
+          <Text fontSize="3xl">tt.</Text>
         </Box>
-      </Flex>
+      </Box>
 
-      <Box display={{ base: "none", md: "block" }}>{navMenu}</Box>
-      <Box display={{ base: "block", md: "none" }}>{mobileNav}</Box>
-    </Stack>
+      <Box>
+        <Box display={{ base: "none", md: "block" }}>{navMenu}</Box>
+        <Box display={{ base: "block", md: "none" }}>{mobileNav}</Box>
+      </Box>
+    </Flex>
   )
 }

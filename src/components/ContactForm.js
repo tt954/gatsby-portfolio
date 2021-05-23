@@ -1,10 +1,9 @@
 import React, { useState } from "react"
-import { Flex, Input, Button } from "@chakra-ui/react"
+import { Stack, Input, Textarea, Button } from "@chakra-ui/react"
 import * as emailjs from "emailjs-com"
 import { emailjsKEYS } from "../data"
 
 export default function ContactForm() {
-
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [subject, setSubject] = useState("")
@@ -36,31 +35,43 @@ export default function ContactForm() {
 
   return (
     <form className="contactForm" onSubmit={handleSubmit}>
-      <Flex>
+      <Stack direction="row" spacing="1rem">
         <Input
           required
           placeholder="Name"
+          borderRadius="none"
           value={name}
           onChange={e => setName(e.target.value)}
         />
         <Input
           required
           placeholder="Email"
+          borderRadius="none"
           value={email}
           onChange={e => setEmail(e.target.value)}
         />
-      </Flex>
+      </Stack>
       <Input
         placeholder="Subject"
+        borderRadius="none"
         value={subject}
         onChange={e => setSubject(e.target.value)}
       />
-      <Input
+      <Textarea
         placeholder="Message"
+        borderRadius="none"
         value={message}
         onChange={e => setMessage(e.target.value)}
       />
-      <Button type="submit">Send</Button>
+      <Button
+        w="100%"
+        borderRadius="none"
+        bg="indigo"
+        color="white"
+        type="submit"
+      >
+        Send
+      </Button>
     </form>
   )
 }

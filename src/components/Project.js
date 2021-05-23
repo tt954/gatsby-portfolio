@@ -16,7 +16,14 @@ export default function Project({ project }) {
 
   const projectDetails = (
     <Box className="p-details">
-      <p>{project.title}</p>
+      <Text
+        color="light"
+        fontFamily="heading"
+        fontWeight="bolder"
+        textTransform="uppercase"
+      >
+        {project.title}
+      </Text>
     </Box>
   )
 
@@ -27,11 +34,7 @@ export default function Project({ project }) {
       cursor="pointer"
       position="relative"
     >
-      <Image
-        className="p-face"
-        src={project.imgSrc}
-        alt={project.title}
-      />
+      <Image className="p-face" src={project.imgSrc} alt={project.title} />
       {projectDetails}
     </Box>
   )
