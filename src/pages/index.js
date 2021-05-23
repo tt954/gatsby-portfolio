@@ -71,12 +71,31 @@ export default function Home() {
       </main>
 
       <main id="about">
-        <section className="container">
-          <Heading as="h2" size="lg" color="dark" letterSpacing={1.5}>
-            Hi, hello, and welcome.
-          </Heading>
-          <Avatar size="2xl" name="Tiffany Thai" src={avatar}/>
-        </section>
+        <Box mb="1rem">
+          <div className="card">
+            <div className="card-body">
+              <Box className="card-front">
+                <Heading size="xl">
+                  Hi, hello, and welcome.
+                </Heading>
+                <Text>
+                  I am a front end developer who values the design and
+                  development process. I am passionate about creating products
+                  that are eye-catching, impactful and long-lasting.
+                </Text>
+              </Box>
+              <Box className="card-back">
+                <Avatar size="2xl" name="Tiffany Thai" src={avatar} />
+                <Text fontWeight="bolder" mt="1rem">
+                  Tiffany T.
+                </Text>
+                <Text color="gray.500" fontSize="sm">
+                  Front End Developer
+                </Text>
+              </Box>
+            </div>
+          </div>
+        </Box>
 
         <Flex className="howiwork" p={["2rem 3rem", "4rem 5rem", "8rem 10rem"]}>
           <Heading
@@ -89,35 +108,43 @@ export default function Home() {
           </Heading>
           <SimpleGrid className="points" columns={[1, 1, 1, 2]} color="white">
             <Box p="3rem">
-              <Heading>Planning</Heading>
-              <Text>
-                Effective communication generates successful collaborations.
-                Asking the right questions. Goals are clear and precise.
-              </Text>
+              <Fade left>
+                <Heading>Planning</Heading>
+                <Text>
+                  Effective communication generates successful collaborations.
+                  Asking the right questions. Goals are clear and precise.
+                </Text>
+              </Fade>
             </Box>
             <Box p="3rem">
-              <Heading>Design</Heading>
-              <Text>
-                The big picture. Using the latest patterns and technologies to
-                craft a solid foundation to produce a productive development
-                process.
-              </Text>
+              <Fade left>
+                <Heading>Design</Heading>
+                <Text>
+                  The big picture. Using the latest patterns and technologies to
+                  craft a solid foundation to produce a productive development
+                  process.
+                </Text>
+              </Fade>
             </Box>
             <Box p="3rem">
-              <Heading>Development</Heading>
-              <Text>
-                Readable and clean code. Bringing ideas and prototypes to life.
-                Creating meaningful and user-first products for the better of
-                society.
-              </Text>
+              <Fade left>
+                <Heading>Development</Heading>
+                <Text>
+                  Readable and clean code. Bringing ideas and prototypes to
+                  life. Creating meaningful and user-first products for the
+                  better of society.
+                </Text>
+              </Fade>
             </Box>
             <Box p="3rem">
-              <Heading>Retrospective</Heading>
-              <Text>
-                Taking feedback into considerations to improve the process. A
-                new day mean a new chance to start a different and even better
-                story.
-              </Text>
+              <Fade left>
+                <Heading>Retrospective</Heading>
+                <Text>
+                  Taking feedback into considerations to improve the process. A
+                  new day mean a new chance to start a different and even better
+                  story.
+                </Text>
+              </Fade>
             </Box>
           </SimpleGrid>
         </Flex>

@@ -19,6 +19,7 @@ export default function Project({ project }) {
       <Text
         color="light"
         fontFamily="heading"
+        fontSize="lg"
         fontWeight="bolder"
         textTransform="uppercase"
       >

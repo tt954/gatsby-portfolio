@@ -26,7 +26,7 @@
   .points {
     border-top: 1px solid white;
     border-left: 1px solid white;
-    div {
+    > div {
       background-color: rgba(0,0,0,0.3);
       border-bottom: 1px solid white;
       border-right: 1px solid white;
@@ -80,33 +80,50 @@
   perspective: 40rem;
   transition: z-index, transform calc(var(--time) / 4);
   transition-delay: var(--time), 0s;
-  cursor: pointer;
   z-index: 0;
-
-  &.flipped {
+  width: 50%;
+  margin: 0 auto;
+  
+  &:hover {
     transition-delay: 0s;
     z-index: 1;
   }
 
-  &.flipped {
+  &:active {
     transform: scale(0.975);
   }
 }
 
 .card-body {
+  display: flex;
   transform-style: preserve-3d;
   transition: var(--time) transform;
 
-  .flipped & {
-    transform: rotateY(180deg);
+  .card:hover &, .card:focus & {
+    transform: rotateX(-180deg);
   }
 }
 
-.card-front,
-.card-back {
+.card-front, .card-back {
   backface-visibility: hidden;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 1.5rem;
 }
 
 .card-back {
-  transform: rotateY(180deg) translate(100%, 0);
+  align-items: center;
+  transform: rotateX(-180deg) translate(-100%, 0);
 }
+
+.shadow {
+  box-shadow: 0 -1px 1px rgba(0,0,0,0.04), 
+              0 2px 2px rgba(0,0,0,0.04), 
+              0 4px 4px rgba(0,0,0,0.04), 
+              0 8px 8px rgba(0,0,0,0.04),
+              0 16px 16px rgba(0,0,0,0.04); 
+}
+
