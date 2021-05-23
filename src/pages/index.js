@@ -51,23 +51,24 @@ export default function Home() {
             User <span>friendly</span> interface
             <Text>Design and Development</Text>
           </Heading>
-          <Text fontSize="2xl" mt="0.5rem">
-            Frontend developer
-          </Text>
         </Fade>
       </main>
 
       <main id="portfolio" className="container">
-        <Heading as="h2" size="lg" color="dark" letterSpacing={1.5}>
-          Portfolio
+        <Heading
+          fontFamily="body"
+          size="lg"
+          color="white"
+          bg="black"
+          p="1rem 2rem"
+          letterSpacing={1.5}
+        >
+          portfolio
         </Heading>
-        <Text color="indigo">Some fun projects.</Text>
         {/* <Stack direction="row" spacing={4} align="center">
           {techFilterBtns}
         </Stack> */}
-        <SimpleGrid columns={[1, 2, 3]} py={2}>
-          {projects}
-        </SimpleGrid>
+        <SimpleGrid columns={[1, 2, 3]}>{projects}</SimpleGrid>
       </main>
 
       <main id="about">
@@ -75,9 +76,7 @@ export default function Home() {
           <div className="card">
             <div className="card-body">
               <Box className="card-front">
-                <Heading size="xl">
-                  Hi, hello, and welcome.
-                </Heading>
+                <Heading size="xl">Hi, hello, and welcome.</Heading>
                 <Text>
                   I am a front end developer who values the design and
                   development process. I am passionate about creating products
