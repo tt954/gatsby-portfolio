@@ -19,10 +19,13 @@ export default function Footer() {
       align="center"
     >
       <Flex direction="column">
-        <Text fontFamily="heading" fontWeight="bolder">
-          <Text as="span" fontSize="5xl">
-            Socials.{"  "}
-          </Text>
+        <Flex
+          direction={["column", "row"]}
+          fontFamily="heading"
+          fontWeight="bolder"
+          align="baseline"
+        >
+          <Text fontSize={["2xl", "5xl"]}>Socials.{"  "}</Text>
           <Text
             as="span"
             fontSize="2xl"
@@ -30,7 +33,7 @@ export default function Footer() {
             _hover={{ color: "pink" }}
             cursor="pointer"
           >
-            <a href="mailto: tiffany11459@gmail.com">Email.</a>{" "}
+            <a href="mailto: tiffany11459@gmail.com">Email.{" "}</a>
           </Text>
           <Text
             as="span"
@@ -43,12 +46,13 @@ export default function Footer() {
               Github.
             </a>
           </Text>
-        </Text>
+        </Flex>
         <p>© 2021 | Designed and developed by TT.</p>
       </Flex>
 
       <Spacer />
       <Button
+        display={{ base: "none", md: "block" }}
         onClick={scrollTop}
         fontSize="1.5rem"
         bg="transparent"
