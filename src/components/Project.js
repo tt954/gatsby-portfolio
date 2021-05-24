@@ -8,12 +8,8 @@ import {
   Button,
   Collapse,
 } from "@chakra-ui/react"
-import Zoom from "react-reveal/Zoom"
-import { FaAngleDown } from "react-icons/fa"
 
 export default function Project({ project }) {
-  const { show, setShow } = useState()
-
   const projectDetails = (
     <Box className="p-details">
       <Text
@@ -22,6 +18,9 @@ export default function Project({ project }) {
         fontSize="lg"
         fontWeight="bolder"
         textTransform="uppercase"
+        textShadow="0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);"
       >
         {project.title}
       </Text>

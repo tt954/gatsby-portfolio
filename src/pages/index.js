@@ -10,10 +10,10 @@ import {
   Button,
 } from "@chakra-ui/react"
 import Fade from "react-reveal/Fade"
-import { StaticImage } from "gatsby-plugin-image"
 
 import Header from "../components/Header"
 import Project from "../components/Project"
+import Experience from "../components/Experience"
 import ContactForm from "../components/ContactForm"
 import Footer from "../components/Footer"
 import theme from "../styles/theme"
@@ -22,7 +22,7 @@ import photo from "../images/landing.jpg"
 import avatar from "../images/avatar.jpg"
 
 import "../styles/index.scss"
-import { projectData, techs } from "../data"
+import { experiences, projectData, techs } from "../data"
 
 export default function Home() {
   const projects = projectData.map((project, idx) => (
@@ -54,7 +54,7 @@ export default function Home() {
         </Fade>
       </main>
 
-      <main id="portfolio" className="container">
+      <Box id="portfolio" p="0 5rem 5rem">
         <Heading
           fontFamily="body"
           size="lg"
@@ -63,37 +63,44 @@ export default function Home() {
           p="1rem 2rem"
           letterSpacing={1.5}
         >
-          portfolio
+          portfolio (some fun projects)
         </Heading>
-        {/* <Stack direction="row" spacing={4} align="center">
-          {techFilterBtns}
-        </Stack> */}
         <SimpleGrid columns={[1, 2, 3]}>{projects}</SimpleGrid>
-      </main>
+      </Box>
 
       <main id="about">
-        <Box mb="1rem">
-          <div className="card">
-            <div className="card-body">
-              <Box className="card-front">
-                <Heading size="xl">Hi, hello, and welcome.</Heading>
-                <Text>
-                  I am a front end developer who values the design and
-                  development process. I am passionate about creating products
-                  that are eye-catching, impactful and long-lasting.
-                </Text>
-              </Box>
-              <Box className="card-back">
-                <Avatar size="2xl" name="Tiffany Thai" src={avatar} />
-                <Text fontWeight="bolder" mt="1rem">
-                  Tiffany T.
-                </Text>
-                <Text color="gray.500" fontSize="sm">
-                  Front End Developer
-                </Text>
-              </Box>
+        <Box m="0 0 5rem" border="1px solid black" borderBottom="none">
+          <Box>
+            <div className="card">
+              <div className="card-body">
+                <Box className="card-front">
+                  <Heading size="3xl">Hi, hello, and welcome.</Heading>
+                  <Text>
+                    I am a front end developer who values the design and
+                    development process. I am passionate about creating products
+                    that are eye-catching, impactful, and long-lasting. I have 5
+                    years of experience in building web applications using React
+                    and Redux. Proficient in HTML, CSS, Javascript, plus other
+                    modern frameworks and libraries.
+                  </Text>
+                </Box>
+                <Box className="card-back">
+                  <Avatar size="2xl" name="Tiffany Thai" src={avatar} />
+                  <Text fontWeight="bolder" mt="1rem">
+                    Tiffany T.
+                  </Text>
+                  <Text color="gray.500" fontSize="sm">
+                    Front End Developer
+                  </Text>
+                </Box>
+              </div>
             </div>
-          </div>
+          </Box>
+          <SimpleGrid className="exp" columns={[1, 1, 2, 4]}>
+            {experiences.map((item, idx) => (
+              <Experience key={idx} exp={item} />
+            ))}
+          </SimpleGrid>
         </Box>
 
         <Flex className="howiwork" p={["2rem 3rem", "4rem 5rem", "8rem 10rem"]}>
@@ -150,7 +157,7 @@ export default function Home() {
       </main>
 
       <Flex id="contact" boxShadow="md" m="5rem">
-        <img src={photo} />
+        <img src={photo} alt="contactform photo"/>
         <Box flex="1" p="2rem">
           <Heading as="h2" size="lg" color="dark" mb="1rem" letterSpacing={1.5}>
             Send me a message

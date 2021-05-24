@@ -15,6 +15,14 @@
   padding: 6rem 5rem 5rem;
 }
 
+.exp {
+  border-top: 1px solid black;
+  > div {
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+  }
+}
+
 .howiwork {
   background-image: url("../images/ttart.jpg");
   background-size: cover;
@@ -27,7 +35,7 @@
     border-top: 1px solid white;
     border-left: 1px solid white;
     > div {
-      background-color: rgba(0,0,0,0.3);
+      background-color: rgba(0, 0, 0, 0.3);
       border-bottom: 1px solid white;
       border-right: 1px solid white;
     }
@@ -74,16 +82,15 @@
 }
 
 // ================================================================= //
-// PROJECT CARDS FLIPPING
 
 .card {
   perspective: 40rem;
   transition: z-index, transform calc(var(--time) / 4);
   transition-delay: var(--time), 0s;
   z-index: 0;
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
-  
+
   &:hover {
     transition-delay: 0s;
     z-index: 1;
@@ -99,19 +106,26 @@
   transform-style: preserve-3d;
   transition: var(--time) transform;
 
-  .card:hover &, .card:focus & {
+  .card:hover &,
+  .card:focus & {
     transform: rotateX(-180deg);
   }
 }
 
-.card-front, .card-back {
+.card-front,
+.card-back {
   backface-visibility: hidden;
   min-width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: black;
+  color: white;
   box-sizing: border-box;
   padding: 1.5rem;
+}
+
+.card-front {
+  justify-content: center;
 }
 
 .card-back {
@@ -119,11 +133,50 @@
   transform: rotateX(-180deg) translate(-100%, 0);
 }
 
-.shadow {
-  box-shadow: 0 -1px 1px rgba(0,0,0,0.04), 
-              0 2px 2px rgba(0,0,0,0.04), 
-              0 4px 4px rgba(0,0,0,0.04), 
-              0 8px 8px rgba(0,0,0,0.04),
-              0 16px 16px rgba(0,0,0,0.04); 
+// ================================================================= //
+
+.ecard {
+  perspective: 40rem;
+  transition: z-index, transform calc(var(--time) / 4);
+  transition-delay: var(--time), 0s;
+  z-index: 0;
+  width: 100%;
+  cursor: pointer;
+  height: 25rem;
+
+  &.flipped {
+    transition-delay: 0s;
+    z-index: 1;
+  }
+
+  &:active {
+    transform: scale(0.975);
+  }
 }
 
+.ecard-body {
+  display: flex;
+  transform-style: preserve-3d;
+  transition: var(--time) transform;
+
+  .ecard.flipped &,
+  .ecard:focus & {
+    transform: rotateY(-180deg);
+  }
+}
+
+.ecard-front,
+.ecard-back {
+  backface-visibility: hidden;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 1.5rem;
+}
+
+.ecard-back {
+  align-items: center;
+  overflow: scroll;
+  transform: rotateY(-180deg) translate(100%, 0);
+}
