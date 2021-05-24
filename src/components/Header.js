@@ -14,6 +14,8 @@ import {
 } from "@chakra-ui/react"
 import { GiHamburgerMenu } from "react-icons/gi"
 
+import Resume from "../images/resume.pdf"
+
 export default function Header() {
   const navMenu = (
     <Stack
@@ -21,11 +23,24 @@ export default function Header() {
       fontFamily="heading"
       fontWeight="normal"
       direction="row"
+      align="center"
       spacing={10}
     >
       <Link onClick={() => scrollTo("#portfolio")}>Projects</Link>
       <Link onClick={() => scrollTo("#about")}>About</Link>
       <Link onClick={() => scrollTo("#contact")}>Contact</Link>
+      <Link
+        className="resumeBtn"
+        href={Resume}
+        target="__blank"
+        bg="indigo"
+        color="white"
+        fontWeight="bolder"
+        p="0.5rem 1rem"
+        _hover={{ bg: "pink" }}
+      >
+        Resume
+      </Link>
     </Stack>
   )
 
@@ -42,6 +57,11 @@ export default function Header() {
         <MenuItem onClick={() => scrollTo("#portfolio")}>Portfolio</MenuItem>
         <MenuItem onClick={() => scrollTo("#about")}>About</MenuItem>
         <MenuItem onClick={() => scrollTo("#contact")}>Contact</MenuItem>
+        <MenuItem>
+          <a href={Resume} target="__blank">
+            Resume
+          </a>
+        </MenuItem>
       </MenuList>
     </Menu>
   )
