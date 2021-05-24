@@ -48,7 +48,7 @@ export default function Home() {
       <main id="landing">
         <Fade top>
           <Heading as="h1" size="3xl" color="dark">
-            User <span>friendly</span> interface
+            User <span>Friendly</span> Interface
             <Text>Design and Development</Text>
           </Heading>
         </Fade>
