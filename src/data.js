@@ -86,6 +86,29 @@ projectData.forEach(project => {
 })
 export const techs = [...new Set(allTechs)]
 
+export const hows = [
+  {
+    heading: "Planning",
+    body:
+      "Effective communication generates successful collaborations. Asking the right questions. Goals are clear and precise.",
+  },
+  {
+    heading: "Design",
+    body:
+      "The big picture. Using the latest patterns and technologies to craft a solid foundation to produce a productive development process.",
+  },
+  {
+    heading: "Development",
+    body:
+      "Readable and clean code. Bringing ideas and prototypes to life. Creating meaningful and user-first products for the better of society.",
+  },
+  {
+    heading: "Retrospective",
+    body:
+      "Taking feedback into considerations to improve the process. A new day mean a new chance to start a different and even better story.",
+  },
+]
+
 export const emailjsKEYS = {
   templateId: "template_dnzji4c",
   serviceId: "service_66s30cf",

@@ -14,15 +14,15 @@ import Fade from "react-reveal/Fade"
 import Header from "../components/Header"
 import Project from "../components/Project"
 import Experience from "../components/Experience"
+import WorkEthic from "../components/WorkEthic"
 import ContactForm from "../components/ContactForm"
 import Footer from "../components/Footer"
 import theme from "../styles/theme"
 
-import photo from "../images/landing.jpg"
 import avatar from "../images/avatar.jpg"
 
 import "../styles/index.scss"
-import { experiences, projectData, techs } from "../data"
+import { experiences, projectData, hows, techs } from "../data"
 
 export default function Home() {
   const projects = projectData.map((project, idx) => (
@@ -47,14 +47,14 @@ export default function Home() {
 
       <main id="landing">
         <Fade top>
-          <Heading as="h1" size="3xl" color="dark">
+          <Heading as="h1" size="3xl" color="dark" mx={["2rem", "5rem"]}>
             User <span>Friendly</span> Interface
             <Text>Design and Development</Text>
           </Heading>
         </Fade>
       </main>
 
-      <Box id="portfolio" p="0 5rem 5rem">
+      <Box id="portfolio" p={["0 2rem 2rem", "0 5rem 5rem"]}>
         <Heading
           fontFamily="body"
           size="lg"
@@ -113,60 +113,27 @@ export default function Home() {
             how i work
           </Heading>
           <SimpleGrid className="points" columns={[1, 1, 1, 2]} color="white">
-            <Box p="3rem">
-              <Fade left>
-                <Heading>Planning</Heading>
-                <Text>
-                  Effective communication generates successful collaborations.
-                  Asking the right questions. Goals are clear and precise.
-                </Text>
-              </Fade>
-            </Box>
-            <Box p="3rem">
-              <Fade left>
-                <Heading>Design</Heading>
-                <Text>
-                  The big picture. Using the latest patterns and technologies to
-                  craft a solid foundation to produce a productive development
-                  process.
-                </Text>
-              </Fade>
-            </Box>
-            <Box p="3rem">
-              <Fade left>
-                <Heading>Development</Heading>
-                <Text>
-                  Readable and clean code. Bringing ideas and prototypes to
-                  life. Creating meaningful and user-first products for the
-                  better of society.
-                </Text>
-              </Fade>
-            </Box>
-            <Box p="3rem">
-              <Fade left>
-                <Heading>Retrospective</Heading>
-                <Text>
-                  Taking feedback into considerations to improve the process. A
-                  new day mean a new chance to start a different and even better
-                  story.
-                </Text>
-              </Fade>
-            </Box>
+            {hows.map(how => (
+              <WorkEthic how={how} />
+            ))}
           </SimpleGrid>
         </Flex>
       </main>
 
-      <Flex id="contact" boxShadow="md" m="5rem">
-        <img src={photo} alt="contactform photo"/>
-        <Box flex="1" p="2rem">
-          <Heading as="h2" size="lg" color="dark" mb="1rem" letterSpacing={1.5}>
-            Send me a message
-          </Heading>
-          <div className="contactWrapper">
-            <ContactForm />
-          </div>
-        </Box>
-      </Flex>
+      <Box
+        direction="row"
+        id="contact"
+        boxShadow="md"
+        m={["2rem", "5rem"]}
+        p="2rem"
+      >
+        <Heading as="h2" size="lg" color="dark" mb="1rem" letterSpacing={1.5}>
+          Send me a message
+        </Heading>
+        <div className="contactWrapper">
+          <ContactForm />
+        </div>
+      </Box>
 
       <Footer />
     </ChakraProvider>
