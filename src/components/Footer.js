@@ -1,7 +1,6 @@
-import React, { useState } from "react"
+import React from "react"
 import { Flex, Spacer, Button, Text } from "@chakra-ui/react"
-import { FaArrowUp, FaGithub } from "react-icons/fa"
-import { GrMailOption } from "react-icons/gr"
+import { FaArrowUp } from "react-icons/fa"
 
 export default function Footer() {
   const scrollTop = () => {
@@ -33,7 +32,7 @@ export default function Footer() {
             _hover={{ color: "pink" }}
             cursor="pointer"
           >
-            <a href="mailto: tiffany11459@gmail.com">Email.{" "}</a>
+            <a href="mailto: tiffany11459@gmail.com">Email. </a>
           </Text>
           <Text
             as="span"
@@ -42,7 +41,12 @@ export default function Footer() {
             _hover={{ color: "pink" }}
             cursor="pointer"
           >
-            <a href="https://github.com/tt954" target="_blank">
+            <a
+              href="https://github.com/tt954"
+              target="_blank"
+              without
+              rel="noreferrer"
+            >
               Github.
             </a>
           </Text>

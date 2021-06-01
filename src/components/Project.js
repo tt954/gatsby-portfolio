@@ -1,13 +1,5 @@
-import React, { useState } from "react"
-import {
-  Flex,
-  Spacer,
-  Box,
-  Text,
-  Image,
-  Button,
-  Collapse,
-} from "@chakra-ui/react"
+import React from "react"
+import { Box, Text, Image } from "@chakra-ui/react"
 
 export default function Project({ project }) {
   const projectDetails = (
@@ -41,20 +33,4 @@ export default function Project({ project }) {
       {projectDetails}
     </Box>
   )
-}
-
-{
-  /* <div className="card-body">
-  <Box className="card-front" bg="light">
-    <img src={project.imgSrc} alt={project.title} />
-    <Box mt="1" fontWeight="semibold" as="h4" lineHeight="tight">
-      {project.title}
-    </Box>
-  </Box>
-  <Box className="card-back">
-    <p>{project.title}</p>
-    <p>{project.technologies}</p>
-    <p>{project.description}</p>
-  </Box>
-</div> */
 }

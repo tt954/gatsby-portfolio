@@ -35,7 +35,7 @@ export default function ContactForm() {
 
   return (
     <form className="contactForm" onSubmit={handleSubmit}>
-      <Stack direction="row" spacing="1rem">
+      <Stack direction={["column", "row"]} spacing={["0", "1rem"]}>
         <Input
           required
           placeholder="Name"

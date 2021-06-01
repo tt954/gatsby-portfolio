@@ -9,6 +9,7 @@ export default function Experience({ exp }) {
     <div
       className={`ecard ${flipped ? "flipped" : ""}`}
       onClick={() => setFlipped(!flipped)}
+      role="alert"
     >
       <div className="ecard-body">
         <div class="ecard-front">
@@ -29,7 +30,7 @@ export default function Experience({ exp }) {
             <Text>{exp.project}</Text>
           </div>
           <Flex justify="flex-end">
-                <FaArrowRight />
+            <FaArrowRight />
           </Flex>
         </div>
         <div class="ecard-back">
